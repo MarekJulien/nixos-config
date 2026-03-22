@@ -1,0 +1,17 @@
+[font]
+size = 14
+[font.bold]
+family = "JetBrains Mono Nerd Font"
+style = "Bold"
+
+[font.normal]
+family = "JetBrains Mono Nerd Font"
+style = "Regular"
+
+[window]
+dynamic_padding = true
+opacity = 0.8
+
+[window.padding]
+x = 6
+y = 6

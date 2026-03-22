@@ -1,0 +1,28 @@
+[branch]
+	sort = "-committerdate"
+
+[column]
+	ui = "auto"
+
+[commit]
+	gpgSign = true
+
+[core]
+	editor = "vim"
+
+[gpg]
+	format = "ssh"
+
+[init]
+	defaultBranch = "main"
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "166394893+MarekJulien@users.noreply.github.com"
+	name = "MarekJulien"
+	signingKey = "~/keys/ssh/github_keys/github.pub"
+
+[includeIf "gitdir:/home/beaver/thm/**"]
+	path = "~/.config/git/thm-config"
