@@ -11,13 +11,11 @@
 
   # Select internationalisation properties
   console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty
+    #font = "Lat2-Terminus16";
+    keyMap = "de";
+    #keyMapOptions = "caps:escape"; (wrong name / does not exist)
+    #useXkbConfig = true; # use xkb.options in tty
   };
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "de";
-  services.xserver.xkb.options = "caps:escape";
 
   # Enable flakes
   nix.extraOptions = "experimental-features = nix-command flakes";
