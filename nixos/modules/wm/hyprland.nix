@@ -2,7 +2,6 @@
 {
   programs.hyprland = {
   enable = true;
-  nvidiaPatches = true;
   xwayland.enable = true;
   };
 
@@ -44,7 +43,6 @@
 
   # TODO Modularize
   # Sound
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
