@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# TODO
+echo Not implemented yet | rofi -dmenu -p "Screen options";

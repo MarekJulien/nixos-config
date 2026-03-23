@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+opts=()
+for d in "$HOME"/keys/ssh/*_keys; do
+  [ -d "$d" ] || continue
+  name=${d##*/}            # "github_keys"
+  prefix=${name%_keys}     # "github"
+  [ -f "$d/$prefix" ] || continue  # require file named like the prefix
+  opts+=("$prefix")
+done
+
+[ ${#opts[@]} -gt 0 ] || { printf 'no keys found\n' >&2; exit 1; }
+
+selected=$(printf '%s\n' "${opts[@]}" | rofi -dmenu -p "Select key")
+selected=$(printf '%s' "$selected")  # trim newline/CR
+
+[ -n "$selected" ] || exit 1  # user cancelled
+
+keypath="$HOME/keys/ssh/${selected}_keys/${selected}"
+alacritty -e bash -ic "ssh-add \"$keypath\"; exec bash"
+

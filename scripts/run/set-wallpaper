@@ -1,0 +1,8 @@
+#!/bin/sh
+dir="$HOME/Pictures/wallpapers/rsc"
+selected=$(ls "$dir" | rofi -dmenu -p "Select wallpaper")
+if [ -n "$selected" ]; then
+    ln -sf "$dir/$selected" "$HOME/Pictures/wallpapers/wallpaper.png"
+    swww img "$HOME/Pictures/wallpapers/wallpaper.png"  --transition-type fade --transition-duration 1
+fi
+

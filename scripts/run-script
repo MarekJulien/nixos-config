@@ -1,0 +1,4 @@
+#!/bin/sh
+scriptpath="$HOME/nixos-config/scripts/run"
+selected=$(ls $scriptpath | rofi -dmenu -p "Run script");
+if [ -n "$selected" ]; then bash -c "$scriptpath/$selected";fi
