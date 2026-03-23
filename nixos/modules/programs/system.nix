@@ -11,7 +11,7 @@
       zoxide
       pcmanfm
       flameshot
-      brightnessctl
+      brightnessctl # still needed for hyprland?
       libsecret # ???
       dconf # ???
     ];

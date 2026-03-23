@@ -6,8 +6,6 @@
       zip
       unzip
       gnupg
-      copyq
-      xclip
       wget
       btop
       neofetch
@@ -18,5 +16,9 @@
       nmap
       ncdu
       gdu
+      # Clipboard
+      #wl-clipboard
+      #cliphist
+      #wl-clip-persist
     ];
 }
