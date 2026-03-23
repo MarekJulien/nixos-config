@@ -5,8 +5,8 @@
       element-desktop
       thunderbird
       texliveFull
-      processing
-      R
-      rstudio
+      #processing
+      #R
+      #rstudio
     ];
 }

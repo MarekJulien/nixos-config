@@ -8,6 +8,7 @@
       fzf
       vim
       # Other
+      zoxide
       pcmanfm
       flameshot
       brightnessctl
