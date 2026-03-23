@@ -16,5 +16,7 @@
       cryptsetup
       vlc
       nmap
+      ncdu
+      gdu
     ];
 }
