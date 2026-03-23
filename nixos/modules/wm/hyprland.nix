@@ -36,6 +36,12 @@
     swww
   ];
 
+  # TODO Clean solution
+  # electron version fix
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-36.9.5"
+  ];
+
   # TODO: Research
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
