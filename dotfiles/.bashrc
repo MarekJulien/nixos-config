@@ -3,16 +3,23 @@
 
 export PS1='\[\e[92;1m\]\u\[\e[22;2;2m\]@\H\[\e[0m\]:\[\e[93;1m\]\w\[\e[0m\] \\$ '
 
-HISTFILESIZE=100000
+# History options
 HISTSIZE=10000
-
+HISTFILESIZE=10000
+HISTFILE=~/.bash_history
 shopt -s histappend
+HISTCONTROL=ignorespace:erasedups # ignore commands with leading space, ignore duplicats
+HISTIGNORE='ls:ll:la:pwd:clear:history:exit' # ignore common noise commands
+PROMPT_COMMAND='history -a; history -n'
+
 shopt -s checkwinsize
 shopt -s extglob
 shopt -s globstar
 shopt -s checkjobs
 
-alias copy='xclip -selection clipboard'
+alias cd="z"
+alias ls="ls --color"
+alias la="ls -a"
 
 
 #if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
