@@ -10,7 +10,8 @@
       # Other
       zoxide
       pcmanfm
-      flameshot
+      pavucontrol # Audio controls
+      flameshot # ???
       brightnessctl # still needed for hyprland?
       libsecret # ???
       dconf # ???

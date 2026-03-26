@@ -7,8 +7,8 @@ swww img ~/Pictures/wallpapers/wallpaper.png &
 # networkmanager applet
 nm-applet --indicator &
 
-# desktop bar
-waybar &
+# waybar
+~/nixos-config/scripts/load-waybar.sh
 
 # notification daemon
 dunst
