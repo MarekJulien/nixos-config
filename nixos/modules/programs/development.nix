@@ -14,5 +14,7 @@
       gcc
       binutils
       gnumake
+      # API tests
+      bruno
     ];
 }
