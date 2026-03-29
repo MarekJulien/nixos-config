@@ -103,7 +103,7 @@
       "interval": 30
   },
   "temperature": {
-      "critical-threshold": 70,
+      "critical-threshold": 80,
       "format": "",
       "tooltip-format": "{temperatureC}°C",
       "interval": 10
