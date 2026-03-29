@@ -6,6 +6,17 @@
         "pulseaudio#input"
     ]
   },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500
+    },
+    "modules": [
+        "custom/nixos",
+        "custom/poweroff",
+        "custom/reboot"
+    ]
+  },
   "group/hardware": {
     "orientation": "inherit",
     "modules": [
@@ -21,7 +32,22 @@
         "clock#date"
     ]
   },
-  
+
+  "custom/nixos": {
+    "format": " NixOS",
+    "tooltip": false,
+    "on-click": "shutdown"
+  },
+  "custom/poweroff": {
+    "format": "⏻",
+    "tooltip-format": "Shutdown",
+    "on-triple-click": "poweroff"
+  },
+  "custom/reboot": {
+    "format": "󰑓",
+    "tooltip-format": "Reboot",
+    "on-triple-click": "reboot"
+  },
 
   "tray": {
       "icon-size": 16,

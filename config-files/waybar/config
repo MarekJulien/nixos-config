@@ -3,7 +3,7 @@
     "mode": "dock",
     "fixed-center": true,
     "position": "top",
-    "modules-left": ["tray"],
+    "modules-left": ["group/power", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["group/audio", "network", "group/hardware", "temperature", "battery", "group/timedate"],
     "reload_style_on_change": true
