@@ -1,0 +1,132 @@
+{
+  "group/audio": {
+    "orientation": "inherit",
+    "modules": [
+        "pulseaudio#output",
+        "pulseaudio#input"
+    ]
+  },
+  "group/hardware": {
+    "orientation": "inherit",
+    "modules": [
+        "cpu",
+        "memory",
+        "disk"
+    ]
+  },
+  "group/timedate": {
+    "orientation": "inherit",
+    "modules": [
+        "clock#time",
+        "clock#date"
+    ]
+  },
+  
+
+  "tray": {
+      "icon-size": 16,
+      "spacing": 5
+  },
+
+  "hyprland/workspaces": {
+      "on-click": "activate",
+      "active-only": false,
+      "all-outputs": true,
+      "format": "{}",
+      "persistent-workspaces": {
+          "*": 10
+      }
+  },
+
+  "pulseaudio#output": {
+      "format": " {volume}%",
+      "format-bluetooth": " {volume}%",
+      "format-bluetooth-muted": " mute",
+      "format-muted": " mute",
+      "on-click": "pavucontrol",
+      "tooltip": false
+  },
+  "pulseaudio#input": {
+      "format": "{format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "on-click": "pavucontrol",
+      "tooltip": false
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": " Disconnected",
+    "tooltip-format-wifi": "{ifname} - {essid} ({signalStrength}%) - {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+    "tooltip-format-disconnected": "",
+    "states": {
+      "regular": 50,
+      "medium": 35,
+      "bad": 20
+    },
+    "interval": 5
+
+  },
+  "cpu": {
+      "format": "",
+      "tooltip-format": "LOAD: {avg_freqency}% - USAGE: {usage}",
+      "states": {
+        "critical": 90,
+        "bad": 75,
+        "medium": 60,
+        "regular": 0
+      },
+      "interval": 2
+  },
+  "memory": {
+      "format": "",
+      "tooltip-format": "mem: {percentage}% [{used:0.1f}/{total:0.1f}GiB]\nswap: {swapPercentage}% [{swapUsed:0.1f}/{swapTotal:0.1f}GiB]",
+      "states": {
+          "critical": 90,
+          "bad": 75,
+          "medium": 60,
+          "regular": 0
+      },
+      "interval": 5
+    },
+  "disk": {
+      "format": "",
+      "unit": "GB",
+      "tooltip-format": "Space left: {free} ({percentage_free}%)\nUsed {specific_used:0.1f}GB of {specific_total:0.1f}GB ({percentage_used}%)",
+      "states": {
+          "critical": 90,
+          "bad": 80,
+          "medium": 70,
+          "regular": 0
+      },
+      "interval": 30
+  },
+  "temperature": {
+      "critical-threshold": 70,
+      "format": "",
+      "tooltip-format": "{temperatureC}°C",
+      "interval": 10
+  },
+  "battery": {
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "states": {
+        "regular": 100,
+        "medium": 50,
+        "bad": 30,
+        "critical": 20
+      },
+      "interval": 3
+  },
+  "clock#time": {
+      "format": "{:%H:%M:%S}",
+      "tooltip": false,
+      "interval": 1
+  },
+  "clock#date": {
+      "format": "{:%d.%m.%Y}",
+      "tooltip": false
+  }
+}

@@ -1,9 +1,8 @@
 { pkgs, ... }:
-
 {
   fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
     nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
+  fonts.fontconfig.enable = true;
 }
