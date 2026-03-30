@@ -9,12 +9,23 @@
   "group/power": {
     "orientation": "inherit",
     "drawer": {
+        "click-to-reveal": true,
         "transition-duration": 500
     },
     "modules": [
         "custom/nixos",
         "custom/poweroff",
         "custom/reboot"
+    ]
+  },
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500
+    },
+    "modules": [
+        "custom/trayicon",
+        "tray"
     ]
   },
   "group/hardware": {
@@ -35,20 +46,22 @@
 
   "custom/nixos": {
     "format": " NixOS",
-    "tooltip": false,
-    "on-click": "shutdown"
+    "tooltip": false
   },
   "custom/poweroff": {
     "format": "⏻",
     "tooltip-format": "Shutdown",
-    "on-triple-click": "poweroff"
+    "on-double-click": "poweroff"
   },
   "custom/reboot": {
     "format": "󰑓",
     "tooltip-format": "Reboot",
-    "on-triple-click": "reboot"
+    "on-double-click": "reboot"
   },
-
+  "custom/trayicon": {
+    "format": "",
+    "tooltip": false
+  },
   "tray": {
       "icon-size": 16,
       "spacing": 5
