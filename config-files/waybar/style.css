@@ -1,6 +1,6 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-weight: 500;
+    font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
+    font-weight: 400;
     font-size: 12px;
     padding: 0;
     margin: 0;
@@ -11,12 +11,16 @@ window#waybar {
 }
 
 .module {
-    border-radius: 5px;
+    border-radius: 10px;
     min-width: 20px;
     margin: 0 3px;
     padding: 0 5px;
-    color: white;
+    color: #DDD;
     background-color: #111;
+}
+
+#custom-nixos {
+    font-weight: 600;
 }
 
 /* Groups */
@@ -25,23 +29,25 @@ window#waybar {
     margin: 0 3px;
 }
 #power .module, #audio .module, #hardware .module, #timedate .module {
-    border-radius: 5px;
     margin: 0 1px;
 }
 
 /* Workspaces */
 #workspaces button {
     padding: 0 2px;
-    background-color: transparent;
-    color: #777777;
+    color: #555;
+}
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #DDD;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    text-shadow: none;
+    transition: none;
+    
 }
 #workspaces button.active {
-    color: #ffffff;
-}
-
-/* Audio */
-#pulseaudio.output:not(.muted) {
-    background-color: orange;
+    color: #FFF;
 }
 
 /* Status levels */
@@ -57,18 +63,18 @@ window#waybar {
     }
 }
 .regular, #battery.charging, #temperature:not(.critical) {
-    background-color: green;
-     animation: none;
+    color: green;
+    animation: none;
 }
-.medium {
-    background-color: orange;
-     animation: none;
+.medium, #pulseaudio.output:not(.muted) {
+    color: orange;
+    animation: none;
 }
 .bad {
-    background-color: red;
-     animation: none;
+    color: red;
+    animation: none;
 }
 .critical, #network.disconnected {
-    background-color: red;
+    color: white;
     animation: critical-blink 2s infinite;
 }
