@@ -17,18 +17,16 @@ shopt -s extglob
 shopt -s globstar
 shopt -s checkjobs
 
+# Aliases
 alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
 
+# Functions
+test-pkgs() {
+  nix-shell --run bash -p "$@"
+}
 
-#if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
-#  . "/nix/store/rdv67mff1y8i47bx85mdxw86fjmzq1sf-bash-completion-2.16.0/etc/profile.d/bash_completion.sh"
-#fi
-
-#if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
-#  eval "$(/nix/store/46kjb1qsifn7n66r0g3dw9w29vc363zg-fzf-0.62.0/bin/fzf --bash)"
-#fi
-
-eval "$(zoxide init bash )"
+# Zoxide integration
+eval "$(zoxide init bash)"
 
