@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "configrepo": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1775248885,
-        "narHash": "sha256-qi6aH5z4UWPNRMuNE8Z1HmB/GFCdkfAnFf78j1ExrOA=",
-        "owner": "MarekJulien",
-        "repo": "nixos-config",
-        "rev": "32b1f5ca51dd4d112a35d32753c56854e9630d8e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MarekJulien",
-        "repo": "nixos-config",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1767313136,
@@ -34,7 +18,6 @@
     },
     "root": {
       "inputs": {
-        "configrepo": "configrepo",
         "nixpkgs": "nixpkgs"
       }
     }

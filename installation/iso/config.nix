@@ -1,4 +1,4 @@
-{ pkgs, configrepo, ... }:
+{ pkgs, ... }:
 {
   # Set time zone
   time.timeZone = "Europe/Berlin";
@@ -10,10 +10,11 @@
   nix.extraOptions = "experimental-features = nix-command flakes";
   # State version
   system.stateVersion = "25.05";
-  # Add config repo
-  system.activationScripts.copyRepo.text = ''
-    mkdir -p /home/nixos/nixos-config
-    cp -r ${configrepo}/* /home/nixos/nixos-config/
-    chown -R nixos:nixos /home/nixos/nixos-config
-  '';
+  # Add installer script
+  environment.etc."run-installer.sh" = {
+    source = ./run-installer.sh;
+    mode = "0755";
+    user = "nixos";
+    group = "nixos";
+  };
 }
