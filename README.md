@@ -21,4 +21,3 @@
 ### Complete the installation
 
 1. Copy your `keys` directory to the new machine
-2. Create dotfile symlinks by running `~/nixos-config/link-dotfiles.sh`
