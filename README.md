@@ -13,7 +13,7 @@
 
 ### Run the installation script on the target machine
 
-1. Run `./etc/run-installer.sh` on the target machine
+1. Run `/etc/run-installer.sh` on the target machine
 
 - This script will guide you through the rest of the installation and reboot automatically when completed
 - You can remove the installation CD/USB after reboot and boot into the new installation

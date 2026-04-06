@@ -23,8 +23,8 @@ connect_to_internet() {
 
     nmcli device wifi connect "$SSID" --ask
 
-    sleep(5)
-    if check_internet; then
+    sleep 5
+    if check_connection; then
         echo "Connected successfully!"
     else
         echo "Failed to connect. Please check your Wi-Fi credentials or network."
@@ -40,6 +40,7 @@ connect_to_internet
 ##### Clone repository #####
 cd ~
 echo "Cloning repository"
+rm -rf nixos-config || true
 git clone https://github.com/MarekJulien/nixos-config.git
 
 ##### Run installer #####

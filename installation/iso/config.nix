@@ -10,6 +10,11 @@
   nix.extraOptions = "experimental-features = nix-command flakes";
   # State version
   system.stateVersion = "25.05";
+  # Additional programs
+  environment.systemPackages = with pkgs; [
+    networkmanager #nmcli
+    git #maybe already included in nixos minimal installer
+  ];
   # Add installer script
   environment.etc."run-installer.sh" = {
     source = ./run-installer.sh;

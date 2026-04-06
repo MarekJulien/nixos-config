@@ -51,7 +51,7 @@ nixos-enter --root /mnt -c "passwd $MAIN_USER"
 
 ##### Reboot #####
 echo "Installation complete. Rebooting in $REBOOT_DELAY seconds"
-sleep($REBOOT_DELAY)
+sleep $REBOOT_DELAY
 reboot 
 
 
