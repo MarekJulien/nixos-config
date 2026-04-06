@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -eux
 
+##### Check for root #####
+if [[ $EUID -ne 0 ]]; then
+   echo "Please run as root"
+   exit 1
+fi
+
 ##### Get user inputs #####
 # Select drive
 echo "Available drives:"

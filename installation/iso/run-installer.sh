@@ -14,7 +14,7 @@ connect_to_internet() {
         echo "Internet connection detected."
         return
     fi
-    echo "No internet detected. Trying to connect via Wi-Fi..."
+    echo "No internet connection detected. Trying to connect via Wi-Fi..."
     
     echo "Available networks:"
     nmcli device wifi list
