@@ -18,7 +18,7 @@ read -p "Select flake configuration (e.g. laptop): " FLAKE_CONFIG
 read -p "Select main user (e.g. beaver): " MAIN_USER
 
 ##### Set other variables #####
-FLAKE_PATH="/home/nixos/nixos-config/nixos/flake.nix" # TODO dynamic
+FLAKE_PATH="/home/nixos/nixos-config/nixos" # TODO dynamic
 REBOOT_DELAY=5
 
 ##### Format disk #####
