@@ -21,9 +21,6 @@ read -p "Select main user (e.g. beaver): " MAIN_USER
 FLAKE_PATH="/home/nixos/nixos-config/nixos/flake.nix" # TODO dynamic
 REBOOT_DELAY=5
 
-##### Use root #####
-sudo -i
-
 ##### Format disk #####
 # Create GPT partition table
 parted $DISK -- mklabel gpt
