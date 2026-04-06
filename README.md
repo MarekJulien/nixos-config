@@ -20,4 +20,5 @@
 
 ### Complete the installation
 
-1. Copy your `keys` directory to the new machine
+1. Run `sudo chown -R $USER:users ~/nixos-config`
+2. Copy your `keys` directory to the new machine
