@@ -21,6 +21,7 @@ shopt -s checkjobs
 alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
+alias clear-trash="rm -rf ~/.local/share/Trash/info/*"
 
 # Functions
 test-pkgs() {
