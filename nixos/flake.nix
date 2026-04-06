@@ -16,7 +16,7 @@
       };
     in {
       nixosConfigurations = {
-        #desktop = mkHost ./hosts/desktop/configuration.nix;
+        desktop = mkHost ./hosts/desktop/configuration.nix;
         laptop = mkHost ./hosts/laptop/configuration.nix;
       };
     };
