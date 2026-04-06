@@ -15,12 +15,12 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
-  #boot.initrd.luks.devices.cryptroot-nixos.device = "/dev/disk/by-label/nixos";
+  # TODO: Check if FDE is enabled
+  boot.initrd.luks.devices.cryptroot-nixos.device = "/dev/disk/by-label/nixos-encrypted";
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
-
   swapDevices = [
     { device = "/dev/disk/by-label/swap"; }
   ];

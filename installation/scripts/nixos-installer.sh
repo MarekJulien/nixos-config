@@ -72,6 +72,8 @@ else
    parted $DISK -- mkpart swap linux-swap -${SWAPSIZE_GB}GB 100%
    mkswap -L swap $(diskPart 3)
 fi
+udevadm trigger
+udevadm settle
 
 ##### Mount filesystems for installation #####
 mount /dev/disk/by-label/nixos /mnt
@@ -85,18 +87,12 @@ nixos-install --no-root-passwd --flake "${FLAKE_PATH}#${FLAKE_CONFIG}"
 cp -r /home/nixos/nixos-config /mnt/home/${MAIN_USER}/
 
 ##### Link dotfiles #####
-$HOME=/home/${MAIN_USER}
-./mnt/home/$MAIN_USER/nixos-config/link-dotfiles.sh
-
-##### Create empty keys directory #####
-mkdir /mnt/home/${MAIN_USER}/keys
+HOME="/home/${MAIN_USER}"
+/mnt/home/$MAIN_USER/nixos-config/link-dotfiles.sh
 
 ##### Set main user password #####
 nixos-enter --root /mnt -c "passwd ${MAIN_USER}"
 
 ##### Reboot #####
-echo "Installation complete. Rebooting in ${REBOOT_DELAY} seconds"
-sleep ${REBOOT_DELAY}
+read -p "Installation complete. Press ENTER to reboot"
 reboot 
-
-
