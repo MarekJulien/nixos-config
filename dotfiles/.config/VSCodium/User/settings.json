@@ -1,0 +1,29 @@
+{
+    // ##### GENERAL #####
+    // Icon Theme
+    "workbench.iconTheme": "material-icon-theme",
+    // Autosave
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+
+    // ##### EDITOR #####
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 18,
+    "editor.stickyScroll.enabled": false,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.tabSize": 2,
+
+    // ##### EXPLORER #####
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
+
+    // ##### TERMINAL #####
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.stickyScroll.enabled": false,
+    
+    // ##### OTHER #####
+    // Java / Redhat
+    "redhat.telemetry.enabled": false,
+    "java.jdt.ls.java.home": "/run/current-system/sw/lib/openjdk",
+}
