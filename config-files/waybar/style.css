@@ -13,10 +13,10 @@ window#waybar {
 .module {
     border-radius: 10px;
     min-width: 20px;
-    margin: 0 3px;
-    padding: 0 5px;
+    margin: 0 6px;
+    padding: 0 3px;
     color: #DDD;
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #custom-nixos {
