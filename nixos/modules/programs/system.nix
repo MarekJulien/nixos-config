@@ -7,6 +7,7 @@
       bash
       fzf
       vim
+      neovim
       # Other
       zoxide
       pcmanfm

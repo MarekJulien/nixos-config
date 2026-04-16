@@ -17,7 +17,7 @@
       ncdu
       gdu
       # Clipboard
-      #wl-clipboard
+      wl-clipboard
       #cliphist
       #wl-clip-persist
     ];

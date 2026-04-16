@@ -27,6 +27,21 @@ alias init-git="git init && touch README.md && touch .gitignore && git add -A &&
 mkdircd() {
   mkdir "$1" && cd "$1"
 }
+init-nixshell() {
+  if [ -e shell.nix ]; then
+      echo "shell.nix already present"
+      return
+  fi
+  cat <<EOF > shell.nix
+{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+  buildInputs = with pkgs; [
+    
+  ];
+}
+EOF
+  echo "shell.nix created"
+}
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
