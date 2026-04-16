@@ -21,11 +21,17 @@ shopt -s checkjobs
 alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
-alias clear-trash="rm -rf ~/.local/share/Trash/{files,info}/*"
 
 # Functions
 test-pkgs() {
   nix-shell --run bash -p "$@"
+}
+
+clear-trash() {
+  local TRASH="$HOME/.local/share/Trash"
+  local size=$(du -sh "$TRASH" | cut -f1)
+  rm -rf $TRASH/{files,info}/*
+  echo "Cleared $size"
 }
 
 # Zoxide integration
