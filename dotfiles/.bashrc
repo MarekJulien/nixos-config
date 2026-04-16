@@ -23,6 +23,9 @@ alias ls="ls --color"
 alias la="ls -a"
 
 # Functions
+mkdircd() {
+  mkdir "$1" && cd "$1"
+}
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
