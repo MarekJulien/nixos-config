@@ -1,7 +1,11 @@
 # Commands that should be applied only for interactive shells.
 [[ $- == *i* ]] || return
 
-export PS1='\[\e[92;1m\]\u\[\e[22;2;2m\]@\H\[\e[0m\]:\[\e[93;1m\]\w\[\e[0m\] \\$ '
+export PS1='\[\e[92;1m\]\u\[\e[22;2;2m\]@\H\[\e[0m\]:\[\e[93;1m\]\w\[\e[0m\]'
+if [ -n "$IN_NIX_SHELL" ]; then
+  PS1="$PS1 (nix-shell)"
+fi
+PS1="$PS1 \$ "
 
 # History options
 HISTSIZE=10000
@@ -22,6 +26,7 @@ alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
 alias init-git="git init && touch README.md && touch .gitignore && git add -A && git commit -m 'Initial commit'"
+alias devshell="nix-shell --run bash"
 
 # Functions
 mkdircd() {
