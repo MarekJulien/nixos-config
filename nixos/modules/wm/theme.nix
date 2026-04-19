@@ -1,5 +1,6 @@
-{ ... }:
-{
+{ lib, config, ... }:
+
+lib.mkIf config.custom.gui.enable {
   # GTK Theme
   programs.dconf.enable = true;
   environment.variables = {

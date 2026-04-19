@@ -1,5 +1,6 @@
-{config, ...}:
-{
+{ lib, config, ...}:
+
+lib.mkIf config.custom.docker.enable {
   virtualisation.docker = {
     enable = true;
     rootless.enable = true;
@@ -9,5 +10,5 @@
       ipv6 = false;
     };
   };
-  users.users.${config.mainUser.username}.extraGroups = [ "docker" ];
+  users.users.${config.custom.mainUser.username}.extraGroups = [ "docker" ];
 }

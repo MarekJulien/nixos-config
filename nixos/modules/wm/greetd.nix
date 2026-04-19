@@ -1,5 +1,6 @@
-{config, pkgs, ...}:
-{
+{ lib, config, pkgs, ... }:
+
+lib.mkIf config.custom.gui.enable {
   services.greetd = {
     enable = true;
     settings = {

@@ -1,11 +1,7 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
     environment.systemPackages = with pkgs; [
-      # General
-      git
-      gh
-      vscodium
       # NodeJS
       nodejs
       # Java
@@ -14,7 +10,9 @@
       gcc
       binutils
       gnumake
-      # API tests
-      bruno
+    ]
+    # GUI Editor
+    ++ lib.optionals config.custom.gui.enable [
+      vscodium
     ];
 }

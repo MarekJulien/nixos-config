@@ -1,10 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
-    networking.hostName = "desktop";
+  networking.hostName = "desktop";
+  imports = [
+    ../../presets/pc.nix
+  ];
 }

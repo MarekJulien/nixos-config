@@ -1,5 +1,6 @@
-{ pkgs, ... }:
-{
+{ lib, config, pkgs, ... }:
+
+lib.mkIf config.custom.gui.enable {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -27,9 +28,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # default terminal emulator
-    kitty
-    # app launcher
+    # rofi
     rofi-wayland
     # waybar
     waybar
@@ -42,6 +41,8 @@
     libnotify
     # wallpaper daemon
     swww
+    # Clipboard
+    wl-clipboard
   ];
 
   # TODO Clean solution
@@ -65,7 +66,6 @@
     ];
   };
 
-
   # TODO Modularize
   security.rtkit.enable = true;
   services.pipewire = {
@@ -76,5 +76,4 @@
     jack.enable = true;
     wireplumber.enable = true;
   };
-
 }

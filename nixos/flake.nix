@@ -5,19 +5,20 @@
   outputs = inputs@{ nixpkgs, ... }:
     let
       system = "x86_64-linux";
-      mkHost = hostPath: nixpkgs.lib.nixosSystem {
+      mkHost = host: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
-          hostPath
           ./default.nix
-          ./modules.nix
+          ./hosts/${host}/configuration.nix
+          ./hosts/${host}/hardware-configuration.nix
         ];
       };
     in {
       nixosConfigurations = {
-        desktop = mkHost ./hosts/desktop/configuration.nix;
-        laptop = mkHost ./hosts/laptop/configuration.nix;
+        desktop = mkHost "desktop";
+        laptop = mkHost "laptop";
+        server = mkHost "server";
       };
     };
 }
