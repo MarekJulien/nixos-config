@@ -16,6 +16,10 @@
           ./default.nix
           ./hosts/${host}/configuration.nix
           ./hosts/${host}/hardware-configuration.nix
+          ({
+            environment.variables = {NIX_FLAKE_HOST = host;};
+            networking.hostName = host;
+          })
         ];
       };
     in {
