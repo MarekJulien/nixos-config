@@ -7,6 +7,10 @@
         default = "beaver";
       };
     };
+    sudoTimeoutMinutes = lib.mkOption {
+      type = lib.types.int;
+      default = 15;
+    };
     programs = {
       nvim.enable = lib.mkEnableOption "nvim";
     };
