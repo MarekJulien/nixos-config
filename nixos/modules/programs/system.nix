@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ self, lib, config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,7 +7,6 @@
     bash
     fzf
     vim
-    neovim
     # Other
     zoxide
     pcmanfm
@@ -16,5 +15,8 @@
     brightnessctl # still needed for hyprland?
     libsecret # ???
     dconf # ???
+  ]
+  ++ lib.optionals config.custom.programs.nvim.enable [
+    self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-neovim
   ];
 }

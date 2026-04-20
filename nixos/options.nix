@@ -7,6 +7,9 @@
         default = "beaver";
       };
     };
+    programs = {
+      nvim.enable = lib.mkEnableOption "nvim";
+    };
     gui = {
       enable = lib.mkEnableOption "GUI";
       cursor = {
