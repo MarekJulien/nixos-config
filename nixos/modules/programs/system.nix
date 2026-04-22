@@ -18,5 +18,8 @@
   ]
   ++ lib.optionals config.custom.programs.nvim.enable [
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-neovim
+    # Telescope dependecies
+    ripgrep
+    fd
   ];
 }

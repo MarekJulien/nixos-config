@@ -138,9 +138,19 @@ in
       enableFormat = false;
     }
     // mkLangs [ "nix" "bash" "assembly" "clang" "python" "html" "css" "typescript" "java" "lua" "sql"];
-    # Other
+    # Plugins
     statusline.lualine.enable = true;
-    telescope.enable = true;
+    telescope = {
+      enable = true;
+      setupOpts = {
+        pickers.find_files.find_command = [
+          "${pkgs.fd}/bin/fd"
+          "--type=file"
+          "--hidden"
+          "--no-ignore"
+        ];
+      };
+    };
     autocomplete.nvim-cmp.enable = true;
   };
 }
