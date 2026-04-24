@@ -3,6 +3,7 @@
 
   users.users.${config.custom.mainUser.username} = {
     isNormalUser = true;
+    createHome = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.bash;
   };

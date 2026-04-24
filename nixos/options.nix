@@ -4,6 +4,7 @@
   options.custom = {
     mainUser = {
       username = lib.mkOption {
+        type = lib.types.str;
         default = "beaver";
       };
     };
@@ -34,7 +35,7 @@
         enable = lib.mkEnableOption "SSH Server";
         port = lib.mkOption {
           type = lib.types.int;
-          default = 30002;
+          default = 22;
         };
         pubAuthKey = lib.mkOption {
           type = lib.types.str;
