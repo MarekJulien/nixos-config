@@ -1,0 +1,12 @@
+#!/bin/sh
+VM_PATH="$HOME/vm/images"
+VM_IMAGE=$(ls $VM_PATH | rofi -dmenu -p "Select image");
+if [ -n "$VM_IMAGE" ]; then
+  NOGUI=$(echo -e "No GUI\nWith GUI" | rofi -dmenu -p "GUI");
+  GUI_OPTION=""
+  if [[ $NOGUI == "No GUI" ]]; then
+    alacritty -e bash -c "qemu-system-x86_64 -enable-kvm -m 4096 -smp 4 -drive file=$VM_PATH/debian_vm.qcow2,format=qcow2 -nographic -serial mon:stdio";
+  else
+    bash -c "qemu-system-x86_64 -enable-kvm -m 4096 -smp 4 -drive file=$VM_PATH/debian_vm.qcow2,format=qcow2";
+  fi
+fi
