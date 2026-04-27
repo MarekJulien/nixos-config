@@ -29,12 +29,23 @@ in
       tabstop = 2;
       shiftwidth = 2;
       expandtab = true;
+      wrap = true;
+      breakindent = true;
+      showbreak = "↪ ";
       ignorecase = true;
       smartcase = true;
       cursorline = true;
       scrolloff = 10;
       list = true;
       confirm = true;
+    };
+    # Diagnostics
+    diagnostics = {
+      enable = true;
+      config = {
+        virtual_text = false;
+        virtual_lines = true;
+      };
     };
     # Keymaps
     keymaps = [
