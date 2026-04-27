@@ -155,5 +155,6 @@ in
     git = {
       gitsigns.enable = true;
     };
+    utility.motion.flash-nvim.enable = true; # Navigation
   };
 }
