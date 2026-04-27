@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }:
 
-{
+lib.mkIf config.custom.programs.groups.developement.enable {
     environment.systemPackages = with pkgs; [
       # NodeJS
       nodejs

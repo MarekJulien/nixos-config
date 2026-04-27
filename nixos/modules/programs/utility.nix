@@ -2,15 +2,26 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Terminal
-    alacritty
+    # Main
     bash
-    fzf
     vim
-    # Other
     zoxide
-    pcmanfm
-    pavucontrol # Audio controls
+    git
+    # Util / Tools
+    fzf
+    file
+    zip unzip
+    gnupg
+    wget
+    btop
+    neofetch
+    tree
+    busybox
+    cryptsetup
+    nmap
+    ncdu
+    gdu
+    # Other, maybe deprecated
     flameshot # ???
     brightnessctl # still needed for hyprland?
     libsecret # ???

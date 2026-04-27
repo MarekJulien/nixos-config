@@ -43,6 +43,8 @@ lib.mkIf config.custom.gui.enable {
     swww
     # Clipboard
     wl-clipboard
+    # Audio controls
+    pavucontrol
   ];
 
   # TODO Clean solution

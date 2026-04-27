@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
-{
-    environment.systemPackages = with pkgs; [
-      element-desktop
-      thunderbird
-      texliveFull
-      #processing
-      #R
-      #rstudio
-    ];
+lib.mkIf config.custom.programs.groups.thm.enable {
+  environment.systemPackages = with pkgs; [
+    texliveFull
+  ] ++ lib.optionals config.custom.programs.nvim.enable [
+    element-desktop
+    thunderbird
+  ];
 }

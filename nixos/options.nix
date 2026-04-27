@@ -13,6 +13,11 @@
       default = 15;
     };
     programs = {
+      groups = {
+        developement.enable = lib.mkEnableOption "developement programs";
+        thm.enable = lib.mkEnableOption "thm programs";
+        fun.enable = lib.mkEnableOption "fun programs";
+      };
       nvim.enable = lib.mkEnableOption "nvim";
     };
     gui = {
