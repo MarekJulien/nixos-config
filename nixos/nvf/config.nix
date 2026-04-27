@@ -157,5 +157,6 @@ in
     };
     utility.motion.flash-nvim.enable = true; # Navigation
     visuals.fidget-nvim.enable = true; # LSP UI
+    comments.comment-nvim.enable = true; # Comments
   };
 }
