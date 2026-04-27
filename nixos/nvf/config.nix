@@ -152,5 +152,8 @@ in
       };
     };
     autocomplete.nvim-cmp.enable = true;
+    git = {
+      gitsigns.enable = true;
+    };
   };
 }
