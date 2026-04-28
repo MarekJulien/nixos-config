@@ -7,6 +7,7 @@
     vim
     zoxide
     git
+    tmux
     # Util / Tools
     fzf
     file
