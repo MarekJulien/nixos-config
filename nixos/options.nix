@@ -47,6 +47,9 @@
           default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAw6yKzBcdtFVuyhCqOj8ZenIlKx73bP3XcRm6FCdRU5";
         };
       };
+      ollama = {
+        enable = lib.mkEnableOption "Ollama service";
+      };
     };
   };
 }

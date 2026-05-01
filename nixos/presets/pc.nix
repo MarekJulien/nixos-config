@@ -13,5 +13,8 @@
       };
       nvim.enable = true;
     };
+    services = {
+      ollama.enable = true;
+    };
   };
 }
