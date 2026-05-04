@@ -28,6 +28,7 @@ lib.mkIf config.custom.gui.enable {
         name = "RelentChess";
         url = "https://relentchess.pixel-cursor.com";
         incognito = false;
+        lightMode = true;
       }
     ];
 }
