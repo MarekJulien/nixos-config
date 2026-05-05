@@ -5,13 +5,21 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs@{ nixpkgs, nvf, self, ... }:
     let
       system = "x86_64-linux";
       mkHost = host: nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; inherit self; };
+        specialArgs = {
+          inherit inputs;
+          inherit self;
+          flakeRoot = self;
+        };
         modules = [
           ./default.nix
           ./hosts/${host}/configuration.nix

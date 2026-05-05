@@ -7,6 +7,14 @@
         type = lib.types.str;
         default = "beaver";
       };
+      homeDir = lib.mkOption {
+        type = lib.types.path;
+        default = builtins.toPath "/home/${config.custom.mainUser.username}";
+      };
+      keyDir = lib.mkOption {
+        type = lib.types.path;
+        default = builtins.toPath "${config.custom.mainUser.homeDir}/keys";
+      };
     };
     sudoTimeoutMinutes = lib.mkOption {
       type = lib.types.int;
