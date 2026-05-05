@@ -12,6 +12,12 @@
       type = lib.types.int;
       default = 15;
     };
+    defaultApplications = {
+      editor = lib.mkOption {
+        type = lib.types.str;
+        default = "vim";
+      };
+    };
     programs = {
       groups = {
         developement.enable = lib.mkEnableOption "developement programs";
