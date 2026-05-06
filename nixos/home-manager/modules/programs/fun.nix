@@ -1,7 +1,7 @@
-{ lib, config, pkgs, ... }:
+{ lib, custom, pkgs, ... }:
 
-lib.mkIf config.custom.programs.groups.fun.enable {
-  environment.systemPackages = with pkgs; [
+lib.mkIf custom.programs.groups.fun.enable {
+  home.packages = with pkgs; [
     cmatrix
     cowsay
     fortune
