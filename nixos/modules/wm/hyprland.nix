@@ -68,14 +68,9 @@ lib.mkIf config.custom.gui.enable {
     ];
   };
 
-  # TODO Modularize
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
+  # Enable pipewire
+  custom.util.pipewire.enable = lib.mkDefault true;
+  warnings = lib.mkIf (!config.custom.util.pipewire.enable) [
+    "Pipewire ist deaktiviert. Das kann Probleme mit Hyprland verursachen"
+  ];
 }

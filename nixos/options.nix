@@ -1,4 +1,4 @@
-{ config, lib, ...}:
+{ lib, config, ...}:
 
 {
   options.custom = {
@@ -33,6 +33,9 @@
         fun.enable = lib.mkEnableOption "fun programs";
       };
       nvim.enable = lib.mkEnableOption "nvim";
+    };
+    util = {
+      pipewire.enable = lib.mkEnableOption "pipewire";
     };
     gui = {
       enable = lib.mkEnableOption "GUI";
