@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # wallpaper daemon
-swww init &
-swww img ~/Pictures/wallpapers/wallpaper.png &
+awww-daemon &
+awww img ~/Pictures/wallpapers/wallpaper.png
 
 # networkmanager applet
 nm-applet --indicator &

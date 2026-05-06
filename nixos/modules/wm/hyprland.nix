@@ -39,8 +39,6 @@ lib.mkIf config.custom.gui.enable {
     # notification daemon
     dunst
     libnotify
-    # wallpaper daemon
-    swww
     # Clipboard
     wl-clipboard
     # Audio controls
