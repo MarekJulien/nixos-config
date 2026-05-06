@@ -10,14 +10,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ nixpkgs, nvf, self, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
       mkHost = host: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit inputs;
-          inherit self;
+          inherit inputs self system;
           flakeRoot = self;
         };
         modules = [
@@ -25,7 +24,9 @@
           ./hosts/${host}/configuration.nix
           ./hosts/${host}/hardware-configuration.nix
           ({
-            environment.variables = {NIX_FLAKE_HOST = host;};
+            environment.variables = {
+              NIX_FLAKE_HOST = host;
+            };
             networking.hostName = host;
           })
         ];
@@ -38,7 +39,7 @@
       };
       # NVF
       packages.x86_64-linux.nvf-neovim =
-      (nvf.lib.neovimConfiguration {
+      (inputs.nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./nvf/config.nix
