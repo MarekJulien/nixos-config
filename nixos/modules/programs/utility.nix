@@ -15,7 +15,7 @@
     gnupg
     wget
     btop
-    neofetch
+    fastfetch # maintained neofetch alternative
     tree
     busybox
     cryptsetup

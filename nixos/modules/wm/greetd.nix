@@ -5,7 +5,7 @@ lib.mkIf config.custom.gui.enable {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd start-hyprland";
         user = "greeter";
       };
     };

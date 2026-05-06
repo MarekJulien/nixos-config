@@ -25,6 +25,7 @@ shopt -s checkjobs
 alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
+alias neofetch="fastfetch"
 alias init-git="git init && touch README.md && touch .gitignore && git add -A && git commit -m 'Initial commit'"
 alias devshell="nix-shell --run bash"
 alias fetch-and-rebuild-flake="cd ~/nixos-config/nixos && git pull && sudo nixos-rebuild switch --flake .#$NIX_FLAKE_HOST"
