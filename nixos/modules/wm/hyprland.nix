@@ -29,7 +29,7 @@ lib.mkIf config.custom.gui.enable {
 
   environment.systemPackages = with pkgs; [
     # rofi
-    rofi-wayland
+    rofi
     # waybar
     waybar
     (waybar.overrideAttrs (oldAttrs: {
