@@ -69,6 +69,6 @@ lib.mkIf config.custom.gui.enable {
   # Enable pipewire
   custom.util.pipewire.enable = lib.mkDefault true;
   warnings = lib.mkIf (!config.custom.util.pipewire.enable) [
-    "Pipewire ist deaktiviert. Das kann Probleme mit Hyprland verursachen"
+    "Pipewire is deactivated. This can cause issues with hyprland"
   ];
 }

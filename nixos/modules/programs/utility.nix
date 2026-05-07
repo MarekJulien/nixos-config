@@ -22,9 +22,8 @@
     nmap
     ncdu
     gdu
+    brightnessctl
     # Other, maybe deprecated
-    flameshot # ???
-    brightnessctl # still needed for hyprland?
     libsecret # ???
     dconf # ???
   ]
