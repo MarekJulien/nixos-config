@@ -12,12 +12,12 @@ let
 in
 {
   config.vim = {
-    # Theme
-    theme = {
-      enable = true;
-      name = "github";                # https://nvf.notashelf.dev/options.html#option-vim-theme-name
-      style = "dark_high_contrast";   # https://nvf.notashelf.dev/options.html#option-vim-theme-style
-    };
+    # Theme (stylix sets theme)
+    # theme = {
+    #   enable = true;
+    #   name = "github";                # https://nvf.notashelf.dev/options.html#option-vim-theme-name
+    #   style = "dark_high_contrast";   # https://nvf.notashelf.dev/options.html#option-vim-theme-style
+    # };
     # Globals
     globals = {
       mapleader = " ";
