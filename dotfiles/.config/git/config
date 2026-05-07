@@ -20,7 +20,7 @@
 	gpgSign = true
 
 [user]
-	email = "166394893+MarekJulien@users.noreply.github.com"
+	email = "git.marekjulien@pm.me"
 	name = "MarekJulien"
 	signingKey = "~/keys/ssh/github_keys/github.pub"
 
