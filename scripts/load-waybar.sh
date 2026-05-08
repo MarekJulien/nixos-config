@@ -6,4 +6,7 @@ waybarconfpath="$HOME/nixos-config/config-files/waybar"
 killall waybar
 
 # start waybar
-waybar -c $waybarconfpath/config -s $waybarconfpath/style.css &
+output=$(waybar -c "$waybarconfpath/config" -s "$waybarconfpath/style.css")
+if [ "$output" ]; then
+      dunstify -u critical "Waybar failed to start" "$output" | true
+fi

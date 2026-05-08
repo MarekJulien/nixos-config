@@ -2,13 +2,13 @@
 dir="$HOME/Pictures/wallpapers/build"
 selected=$(find "$dir" -maxdepth 1 -type f -printf "%f\n" | rofi -dmenu -p "Select wallpaper")
 if [ -n "$selected" ]; then
-  dunstify -u low "Wallpaper $selected send to daemon" "This may take a while"
+  dunstify -u low "Wallpaper $selected send to daemon" "This may take a while" | true
   output=$(awww img "$dir/$selected" --transition-type fade --transition-duration 1 2>&1)
   status=$?
   if [ "$status" -eq 0 ]; then
-      dunstify -u low "Wallpaper set successfully" "$selected"
+      dunstify -u low "Wallpaper set successfully" "$selected" | true
   else
-      dunstify -u critical "Wallpaper change failed" "$output"
+      dunstify -u critical "Wallpaper change failed" "$output" | true
   fi
 fi
 

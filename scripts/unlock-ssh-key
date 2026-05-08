@@ -17,4 +17,13 @@ selected=$(printf '%s' "$selected")  # trim newline/CR
 [ -n "$selected" ] || exit 1  # user cancelled
 
 keypath="$HOME/keys/ssh/${selected}_keys/${selected}"
-alacritty -e bash -ic "ssh-add \"$keypath\""
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export SSH_ASKPASS="$SCRIPT_DIR/rofi-askpass"
+export SSH_ASKPASS_REQUIRE=force
+
+if setsid ssh-add "$keypath" </dev/null; then
+    dunstify -u low "ssh-agent" "Successfully added key $selected" || true
+else
+    dunstify -u critical "ssh-agent" "Failed to add key $selected" || true
+fi

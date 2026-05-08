@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 action=$(echo -e "test\nswitch" | rofi -dmenu -p "nixos-rebuild");
+[ -n "$action" ] || exit 1  # user cancelled
 command="sudo nixos-rebuild ${action} --flake ~/nixos-config/nixos#${NIX_FLAKE_HOST}"
 
 alacritty -e bash -c '
