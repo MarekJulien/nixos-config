@@ -34,7 +34,7 @@ in
       showbreak = "↪ ";
       ignorecase = true;
       smartcase = true;
-      cursorline = true;
+      #cursorline = true; Does not look good with transparent background
       scrolloff = 10;
       list = true;
       confirm = true;
