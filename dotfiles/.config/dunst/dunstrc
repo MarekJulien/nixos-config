@@ -1,0 +1,30 @@
+# https://dunst-project.org/documentation/
+
+[global]
+  offset = (8, 8)
+  gap_size = 4
+  corner_radius = 8
+  font = "JetBrainsMono Nerd Font"
+  show_age_threshold = 20
+  history_length = 20
+  browser = "brave"
+  notification_limit = 5
+  origin = top-right
+
+[urgency_low]
+  timeout = 3
+  background ="#000000AA"
+  foreground ="#CCC"
+  frame_color = "#111"
+
+[urgency_normal]
+  timeout = 5
+  background ="#000000DD"
+  foreground ="#FFF"
+  frame_color = "#555"
+
+[urgency_critical]
+  timeout = 10
+  background ="#DD0000DD"
+  foreground ="#EEE"
+  frame_color = "#D00"

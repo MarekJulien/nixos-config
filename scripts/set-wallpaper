@@ -8,7 +8,7 @@ if [ -n "$selected" ]; then
   if [ "$status" -eq 0 ]; then
       dunstify -u low "Wallpaper set successfully" "$selected"
   else
-      dunstify -u normal "Wallpaper change failed" "$output"
+      dunstify -u critical "Wallpaper change failed" "$output"
   fi
 fi
 
