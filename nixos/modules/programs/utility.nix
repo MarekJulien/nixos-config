@@ -19,6 +19,7 @@
     tree
     busybox
     cryptsetup
+    ffmpeg
     nmap
     ncdu
     gdu
