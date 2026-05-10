@@ -53,10 +53,32 @@ test-pkgs() {
   nix-shell --run bash -p "$@"
 }
 clear-trash() {
-  local TRASH="$HOME/.local/share/Trash"
-  local size=$(du -sh "$TRASH" | cut -f1)
-  rm -rf $TRASH/{files,info}/*
+  local trash
+  trash="$HOME/.local/share/Trash"
+  local size
+  size=$(du -sh "$trash" | cut -f1)
+  rm -rf "$trash"/{files,info}/*
   echo "Cleared $size"
+}
+print-files-as-llm-context() {
+  local path
+  local all_valid=0
+  # Check if all paths are valid files
+  for path in "$@"; do
+    if [[ ! -f "$path" ]]; then
+      echo "\"$path\" is not a valid file"
+      all_valid=1
+    fi
+  done
+  # Print files
+  [ "$all_valid" -ne 0 ] && return 1
+  for path in "$@"; do
+    printf "file \"%s\":\n" "$path"
+    printf "´´´\n"
+    cat "$path"
+    printf "´´´\n"
+    printf "\n"
+  done
 }
 
 # Zoxide integration
