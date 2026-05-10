@@ -38,6 +38,7 @@ in
       scrolloff = 10;
       list = true;
       confirm = true;
+      mouse = ""; # Disable mouse inputs
     };
     # Diagnostics
     diagnostics = {
