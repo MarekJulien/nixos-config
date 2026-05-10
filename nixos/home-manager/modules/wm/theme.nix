@@ -18,9 +18,12 @@ lib.mkIf custom.gui.enable {
       name = "Papirus";
     };
   };
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = lib.mkForce "prefer-dark";
+      };
+    };
+  };
 }
