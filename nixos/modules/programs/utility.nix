@@ -20,7 +20,6 @@
     busybox
     cryptsetup
     ffmpeg
-    nmap
     ncdu
     gdu
     brightnessctl

@@ -31,6 +31,7 @@
         developement.enable = lib.mkEnableOption "developement programs";
         thm.enable = lib.mkEnableOption "thm programs";
         fun.enable = lib.mkEnableOption "fun programs";
+        tools.enable = lib.mkEnableOption "tool programs";
       };
       nvim.enable = lib.mkEnableOption "nvim";
     };

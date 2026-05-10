@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, ... }:
 
 {
   custom = {
@@ -10,6 +10,7 @@
         developement.enable = true;
         thm.enable = true;
         fun.enable = true;
+        tools.enable = true;
       };
       nvim.enable = true;
     };
