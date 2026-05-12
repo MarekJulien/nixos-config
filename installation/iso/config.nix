@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     networkmanager # already included with networkmanager.enable option?
     git # maybe already included in nixos minimal installer
+    tmux
   ];
   # networkmanager / nmcli
   networking.wireless.enable = false;
