@@ -49,6 +49,36 @@ pkgs.mkShell {
 EOF
   echo "shell.nix created"
 }
+init-nixdev() {
+  if [ -e flake.nix ]; then
+    echo "flake.nix already present"
+    return
+  fi
+  cat <<EOF > flake.nix
+{
+  description = "Nix dev shell";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  outputs = { self, nixpkgs }:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      # config.allowUnfree = true;
+    };
+  in {
+    devShells.\${system}.default = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        
+      ];
+      shellHook = ''
+        source ~/.bashrc # TODO clean solution
+      '';
+    };
+  };
+}
+EOF
+  echo "flake.nix created"
+}
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
