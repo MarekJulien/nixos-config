@@ -65,6 +65,18 @@
           default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAw6yKzBcdtFVuyhCqOj8ZenIlKx73bP3XcRm6FCdRU5";
         };
       };
+      tor = {
+        enable = lib.mkEnableOption "tor service";
+        hiddenServices = {
+          ssh = {
+            enable = lib.mkEnableOption "Hidden ssh service";
+            hiddenPort = lib.mkOption {
+              type = lib.types.int;
+              default = 30001;
+            };
+          };
+        };
+      };
       ollama = {
         enable = lib.mkEnableOption "Ollama service";
       };
