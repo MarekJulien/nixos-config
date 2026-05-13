@@ -4,6 +4,9 @@
   # Options
   custom = {
     mainUser.username = "admin";
+    programs = {
+      tmux.enable = true;
+    };
     services = {
       sshServer.enable = true;
       tor = {

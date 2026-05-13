@@ -151,6 +151,7 @@ in
     }
     // mkLangs [ "nix" "bash" "assembly" "clang" "python" "html" "css" "typescript" "java" "lua" "sql"];
     # Plugins
+    utility.smart-splits.enable = true; # vim/tmux integration
     statusline.lualine.enable = true;
     telescope = {
       enable = true;

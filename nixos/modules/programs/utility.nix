@@ -7,7 +7,6 @@
     vim
     zoxide
     git
-    tmux
     # Util / Tools
     fzf
     file
@@ -26,6 +25,9 @@
     # Other, maybe deprecated
     libsecret # ???
     dconf # ???
+  ]
+  ++ lib.optionals config.custom.programs.tmux.enable [
+    tmux
   ]
   ++ lib.optionals config.custom.programs.nvim.enable [
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-neovim

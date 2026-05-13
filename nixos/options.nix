@@ -34,6 +34,7 @@
         tools.enable = lib.mkEnableOption "tool programs";
       };
       nvim.enable = lib.mkEnableOption "nvim";
+      tmux.enable = lib.mkEnableOption "tmux";
     };
     util = {
       pipewire.enable = lib.mkEnableOption "pipewire";

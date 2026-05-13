@@ -13,6 +13,7 @@
         tools.enable = true;
       };
       nvim.enable = true;
+      tmux.enable = true;
     };
     services = {
       tor.enable = true;
