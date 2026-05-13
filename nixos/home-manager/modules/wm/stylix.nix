@@ -1,6 +1,18 @@
 { custom, config, lib, pkgs, ... }:
-
- lib.mkIf custom.gui.enable {
+let
+  ### Cursor ###
+  cursorSize = custom.gui.cursor.size;
+  cursorThemeName = custom.gui.cursor.theme;
+  cursorPackages = {
+    "Bibata-Modern-Classic" = pkgs.bibata-cursors;
+    "Bibata-Modern-Ice" = pkgs.bibata-cursors;
+    "Adwaita" = pkgs.gnome.adwaita-icon-theme;
+  };
+  cursorPkg =
+    cursorPackages.${cursorThemeName}
+    or (throw "Unknown cursor theme: ${cursorThemeName}");
+in
+lib.mkIf custom.gui.enable {
   ##### Stylix #####
   stylix = {
     # Documentation: https://nix-community.github.io/stylix/options/platforms/home_manager.html
@@ -11,15 +23,23 @@
     targets = {
       nvf.enable = false; # Found no working solution with trasparent bg so far
     };
+
     # Color scheme (https://tinted-theming.github.io/tinted-gallery/)
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
 
     # Cursor
-    # cursor
-    # cursor.name
-    # cursor.package
-    # cursor.size
+    cursor = {
+      name = cursorThemeName;
+      package = cursorPkg;
+      size = cursorSize;
+    };
+
+    # Icons
+    # icons.enable
+    # icons.package
+    # icons.dark
+    # icons.light
 
     # Fonts
     # fonts.sizes.applications
@@ -35,12 +55,6 @@
     # fonts.sansSerif.package
     # fonts.serif.name
     # fonts.serif.package
-
-    # Icons
-    # icons.enable
-    # icons.package
-    # icons.dark
-    # icons.light
 
     # Wallpaper image
     # image
