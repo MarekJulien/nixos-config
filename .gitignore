@@ -1,2 +1,4 @@
-installation/iso/build
-installation/iso/result
+# Installation iso and vm builds
+build
+result
+*.qcow2
