@@ -10,6 +10,16 @@
 [core]
 	editor = "vim"
 
+[alias]
+  s = "status --short"
+  fs = "status"
+  aa = "add -A"
+  fd = "!git diff --staged && git diff && for f in $(git ls-files --others --exclude-standard); do git diff --no-index /dev/null \"$f\"; done"
+  ll = "log -n5 --pretty=oneline"
+  c = "commit"
+  ca = "commit --amend"
+  can = "commit --amend --no-edit"
+
 [gpg]
 	format = "ssh"
 

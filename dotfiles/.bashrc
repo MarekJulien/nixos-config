@@ -22,6 +22,7 @@ shopt -s globstar
 shopt -s checkjobs
 
 # Aliases
+alias g="git"
 alias cd="z"
 alias ls="ls --color"
 alias la="ls -a"
