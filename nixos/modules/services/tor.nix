@@ -1,8 +1,13 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
   torcfg = config.custom.services.tor;
 in
 lib.mkIf torcfg.enable {
+  # Add tor packages
+  environment.systemPackages = with pkgs; [
+    tor # already added with services.tor.enable?
+    torsocks
+  ];
   services.tor = {
     enable = true;
     relay.onionServices =

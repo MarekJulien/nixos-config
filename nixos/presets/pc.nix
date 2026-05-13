@@ -15,6 +15,7 @@
       nvim.enable = true;
     };
     services = {
+      tor.enable = true;
       ollama.enable = true;
     };
   };
