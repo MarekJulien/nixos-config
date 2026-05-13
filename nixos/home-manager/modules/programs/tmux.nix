@@ -6,12 +6,13 @@ lib.mkIf custom.programs.tmux.enable {
     plugins = with pkgs; [
       tmuxPlugins.sensible
       tmuxPlugins.vim-tmux-navigator
-      {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavour 'mocha'
-        '';
-      }
+      # Stylix sets theme
+      # {
+      #   plugin = tmuxPlugins.catppuccin;
+      #   extraConfig = ''
+      #     set -g @catppuccin_flavour 'mocha'
+      #   '';
+      # }
     ];
     # Config
     mouse = false;

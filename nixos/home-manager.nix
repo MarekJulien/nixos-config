@@ -9,7 +9,12 @@
       inherit (config) custom;
     };
     users = {
-      ${config.custom.mainUser.username} = import ./home-manager/mainUser.nix;
+      ${config.custom.mainUser.username} = {
+        imports = [
+          inputs.stylix.homeModules.stylix
+          ./home-manager/mainUser.nix
+        ];
+      };
     };
   };
 }

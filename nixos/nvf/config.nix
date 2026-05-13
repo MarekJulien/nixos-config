@@ -12,12 +12,13 @@ let
 in
 {
   config.vim = {
-    # Theme (stylix sets theme)
-    # theme = {
-    #   enable = true;
-    #   name = "github";                # https://nvf.notashelf.dev/options.html#option-vim-theme-name
-    #   style = "dark_high_contrast";   # https://nvf.notashelf.dev/options.html#option-vim-theme-style
-    # };
+    # Theme   # TODO Set Theme (+transparent bg) with Stylix
+    theme = {
+      enable = true;
+      name = "catppuccin";       # https://nvf.notashelf.dev/options.html#option-vim-theme-name
+      style = "mocha";           # https://nvf.notashelf.dev/options.html#option-vim-theme-style
+      transparent = true;
+    };
     # Globals
     globals = {
       mapleader = " ";
@@ -172,12 +173,5 @@ in
     visuals.fidget-nvim.enable = true; # LSP UI
     comments.comment-nvim.enable = true; # Comments
     autopairs.nvim-autopairs.enable = true; # (){}... autoclose
-    # Custom
-    luaConfigRC.transparent = ''
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
-      vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-    '';
   };
 }
