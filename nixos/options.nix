@@ -51,6 +51,10 @@
           default = "Bibata-Modern-Classic";
         };
       };
+      iconTheme = lib.mkOption {
+        type = lib.types.str;
+        default = "Papirus";
+      };
     };
     docker.enable = lib.mkEnableOption "Docker";
     virtualisation.enable = lib.mkEnableOption "Virtualisation";

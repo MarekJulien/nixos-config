@@ -11,6 +11,16 @@ let
   cursorPkg =
     cursorPackages.${cursorThemeName}
     or (throw "Unknown cursor theme: ${cursorThemeName}");
+  ### Icon Theme ###
+  iconThemeName = custom.gui.iconTheme;
+  iconThemePackages = {
+    "Papirus" = pkgs.papirus-icon-theme;
+    "Paper" = pkgs.paper-icon-theme;
+    "WhiteSur" = pkgs.whitesur-icon-theme;
+  };
+  iconThemePkg =
+    iconThemePackages.${iconThemeName}
+    or (throw "Unknown cursor theme: ${cursorThemeName}");
 in
 lib.mkIf custom.gui.enable {
   ##### Stylix #####
@@ -36,10 +46,12 @@ lib.mkIf custom.gui.enable {
     };
 
     # Icons
-    # icons.enable
-    # icons.package
-    # icons.dark
-    # icons.light
+    icons = {
+      enable = true;
+      dark = iconThemeName;
+      light = null;
+      package = iconThemePkg;
+    };
 
     # Fonts
     # fonts.sizes.applications
@@ -81,12 +93,6 @@ lib.mkIf custom.gui.enable {
     #   package = pkgs.nordic;
     #   name = "Nordic-darker";
     # };
-    iconTheme = {
-      # package = pkgs.paper-icon-theme;
-      # name = "Paper";
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus";
-    };
   };
   dconf = {
     enable = true;
