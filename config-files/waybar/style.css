@@ -1,3 +1,16 @@
+@define-color transparent rgba(0,0,0,0);
+
+/* Fallback colors (catppuccin mocha) if stylix is not used */
+@define-color base00 #1e1e2e; @define-color base01 #313244;
+@define-color base02 #45475a; @define-color base03 #6c7086;
+@define-color base04 #a6adc8; @define-color base05 #cdd6f4;
+@define-color base06 #f5e0dc; @define-color base07 #b4befe;
+
+@define-color base08 #f38ba8; @define-color base09 #fab387;
+@define-color base0A #f9e2af; @define-color base0B #a6e3a1;
+@define-color base0C #94e2d5; @define-color base0D #89b4fa;
+@define-color base0E #cba6f7; @define-color base0F #f2cdcd;
+
 * {
     font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
     font-weight: 400;
@@ -15,8 +28,8 @@ window#waybar {
     min-width: 20px;
     margin: 0 6px;
     padding: 0 3px;
-    color: #DDD;
-    background-color: rgba(0, 0, 0, 0);
+    color: @base05;
+    background-color: @transparent;
 }
 
 #custom-nixos {
@@ -35,46 +48,46 @@ window#waybar {
 /* Workspaces */
 #workspaces button {
     padding: 0 2px;
-    color: #555;
+    color: @base03;
 }
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0);
-    color: #DDD;
-    border-color: rgba(0, 0, 0, 0);
+    background: @transparent;
+    color: @base04;
+    border-color: @transparent;
     box-shadow: none;
     text-shadow: none;
     transition: none;
     
 }
 #workspaces button.active {
-    color: #FFF;
+    color: @base05;
 }
 
 /* Status levels */
 @keyframes critical-blink {
     0% {
-        background-color: red;
+        background-color: @base08;
     }
     50% {
-        background-color: darkred;
+        background-color: @base0F;
     }
     100% {
-        background-color: red;
+        background-color: @base08;
     }
 }
 .regular, #battery.charging, #temperature:not(.critical) {
-    color: green;
+    color: @base0B;
     animation: none;
 }
 .medium, #pulseaudio.output:not(.muted) {
-    color: orange;
+    color: @base09;
     animation: none;
 }
 .bad {
-    color: red;
+    color: @base08;
     animation: none;
 }
 .critical, #network.disconnected {
-    color: white;
+    color: @base05;
     animation: critical-blink 2s infinite;
 }

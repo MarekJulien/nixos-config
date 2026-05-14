@@ -30,12 +30,6 @@ lib.mkIf config.custom.gui.enable {
   environment.systemPackages = with pkgs; [
     # rofi
     rofi
-    # waybar
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    })
-    )
     # notification daemon
     dunst
     libnotify

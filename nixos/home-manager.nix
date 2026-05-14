@@ -1,11 +1,11 @@
-{ inputs, config, ... }:
+{ inputs, config, flakeRoot, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs flakeRoot;
       inherit (config) custom;
     };
     users = {
