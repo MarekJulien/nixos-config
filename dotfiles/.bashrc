@@ -49,6 +49,19 @@ mkcd() {
   mkdir "$1" && cd "$1"
 }
 # > NixOS
+alias list-nixos-generations="sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
+switch-nixos-generation() {
+  if [ -z "$1" ]; then
+    echo "Usage: list-nixos-generations <generation-number>"
+    return 1
+  fi
+  local GENERATION_LINK="/nix/var/nix/profiles/system-${1}-link"
+  if [ ! -e "$GENERATION_LINK" ]; then
+    echo "Generation ${1} not available"
+    return 2
+  fi
+  sudo "$GENERATION_LINK"/bin/switch-to-configuration switch
+}
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
