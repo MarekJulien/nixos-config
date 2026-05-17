@@ -21,20 +21,11 @@ shopt -s extglob
 shopt -s globstar
 shopt -s checkjobs
 
-# Aliases
+# Aliases & Functions
+# > dev
 alias g="git"
-alias cd="z"
-alias ls="ls --color"
-alias la="ls -a"
-alias neofetch="fastfetch"
 alias init-git="git init && touch README.md && touch .gitignore && git add -A && git commit -m 'Initial commit'"
 alias devshell="nix-shell --run bash"
-alias fetch-and-rebuild-flake="cd ~/nixos-config/nixos && git pull && sudo nixos-rebuild switch --flake .#$NIX_FLAKE_HOST"
-
-# Functions
-mkdircd() {
-  mkdir "$1" && cd "$1"
-}
 init-nixshell() {
   if [ -e shell.nix ]; then
       echo "shell.nix already present"
@@ -50,47 +41,19 @@ pkgs.mkShell {
 EOF
   echo "shell.nix created"
 }
-init-nixdev() {
-  if [ -e flake.nix ]; then
-    echo "flake.nix already present"
-    return
-  fi
-  cat <<EOF > flake.nix
-{
-  description = "Nix dev shell";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  outputs = { self, nixpkgs }:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      # config.allowUnfree = true;
-    };
-  in {
-    devShells.\${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        
-      ];
-      shellHook = ''
-        source ~/.bashrc # TODO clean solution
-      '';
-    };
-  };
+# > terminal / navigation
+alias cd="z"
+alias ls="ls --color"
+alias la="ls -a"
+mkcd() {
+  mkdir "$1" && cd "$1"
 }
-EOF
-  echo "flake.nix created"
-}
+# > NixOS
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
-clear-trash() {
-  local trash
-  trash="$HOME/.local/share/Trash"
-  local size
-  size=$(du -sh "$trash" | cut -f1)
-  rm -rf "$trash"/{files,info}/*
-  echo "Cleared $size"
-}
+alias fetch-and-rebuild-flake="cd ~/nixos-config/nixos && git pull && sudo nixos-rebuild switch --flake .#$NIX_FLAKE_HOST"
+# > LLM
 print-files-as-llm-context() {
   local path
   local all_valid=0
@@ -111,6 +74,17 @@ print-files-as-llm-context() {
     printf "\n"
   done
 }
+# > etc
+alias neofetch="fastfetch"
+clear-trash() {
+  local trash
+  trash="$HOME/.local/share/Trash"
+  local size
+  size=$(du -sh "$trash" | cut -f1)
+  rm -rf "$trash"/{files,info}/*
+  echo "Cleared $size"
+}
+
 
 # Zoxide integration
 eval "$(zoxide init bash)"
