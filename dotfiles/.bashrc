@@ -62,6 +62,15 @@ switch-nixos-generation() {
   fi
   sudo "$GENERATION_LINK"/bin/switch-to-configuration switch
 }
+delete-old-nixos-generations() {
+  read -r -p "This will delete every generation except the current one and make rollbacks impossible. Continue? [y/N] " answer
+  if [[ "${answer,,}" =~ ^(y|yes)$ ]]; then
+    sudo nix-collect-garbage -d
+    nix-collect-garbage -d
+  else
+    echo "Canceled"
+  fi
+}
 test-pkgs() {
   nix-shell --run bash -p "$@"
 }
