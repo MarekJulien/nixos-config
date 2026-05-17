@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-  ];
+  # TODO: Check if this is still required
   fonts.fontconfig.enable = true;
 }

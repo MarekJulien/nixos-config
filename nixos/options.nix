@@ -26,6 +26,24 @@
         default = "vim";
       };
     };
+    font = rec {
+      default = {
+        name = lib.mkOption {
+          type = lib.types.str;
+          default = "JetBrainsMono Nerd Font";
+        };
+        size = lib.mkOption {
+          type = lib.types.int;
+          default = 12;
+        };
+      };
+      terminal = {
+        size = lib.mkOption {
+          type = lib.types.int;
+          default = default.size;
+        };
+      };
+    };
     programs = {
       groups = {
         developement.enable = lib.mkEnableOption "developement programs";
