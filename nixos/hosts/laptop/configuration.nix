@@ -4,6 +4,6 @@
     ../../presets/pc.nix
   ];
   custom = {
-    font.terminal.size = 16;
+    font.terminal.size = 14;
   };
 }
