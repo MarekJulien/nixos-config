@@ -150,7 +150,7 @@ in
       enableTreesitter = true;
       enableFormat = false;
     }
-    // mkLangs [ "nix" "bash" "assembly" "clang" "python" "html" "css" "typescript" "java" "lua" "sql"];
+    // mkLangs [ "nix" "bash" "assembly" "clang" "make" "python" "html" "css" "typescript" "java" "json" "yaml" "lua" "sql" "tex"];
     # Plugins
     utility.smart-splits.enable = true; # vim/tmux integration
     statusline.lualine.enable = true;
