@@ -29,6 +29,9 @@ lib.mkIf custom.programs.tmux.enable {
       # Split using cwd
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
+
+      # Prefix + Ctrl + L
+      bind C-l send-keys C-l \; clear-history # Clear scrollback
     '';
   };
 }
