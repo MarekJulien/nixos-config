@@ -9,7 +9,7 @@ PS1="$PS1 \$ "
 
 # History options
 HISTSIZE=10000
-HISTFILESIZE=10000
+HISTFILESIZE=100000
 HISTFILE=~/.bash_history
 shopt -s histappend
 HISTCONTROL=ignorespace:erasedups # ignore commands with leading space, ignore duplicats
