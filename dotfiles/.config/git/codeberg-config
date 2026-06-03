@@ -1,0 +1,4 @@
+[user]
+    name = "MarekJulien"
+    email = "git.marekjulien@pm.me"
+    signingkey = "~/keys/ssh/codeberg_keys/codeberg.pub"

@@ -36,3 +36,6 @@
 
 [includeIf "gitdir:/home/beaver/thm/**"]
 	path = "~/.config/git/thm-config"
+
+[includeIf "gitdir:/home/*/repos/codeberg/**"]
+	path = "~/.config/git/codeberg-config"
