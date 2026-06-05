@@ -8,6 +8,7 @@ lib.mkIf custom.programs.groups.developement.enable {
       gnumake
       # Python
       python3
+      pipenv
       # Java
       jdk
       # NodeJS
