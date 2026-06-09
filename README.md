@@ -1,3 +1,6 @@
+# Important notice
+
+This repository was moved to [Codeberg](https://codeberg.org/MarekJulien/nixos-config)
 
 ## Installation
 
