@@ -9,5 +9,17 @@ lib.mkIf custom.gui.enable {
     libreoffice
     pcmanfm
     vlc
+    qimgv # Image viewer
   ];
+  # Default applications # TODO: Make dynamic
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/jpeg" = [ "qimgv.desktop" ];
+      "image/png"  = [ "qimgv.desktop" ];
+      "image/webp" = [ "qimgv.desktop" ];
+      "image/gif"  = [ "qimgv.desktop" ];
+      "image/bmp"  = [ "qimgv.desktop" ];
+    };
+  };
 }
